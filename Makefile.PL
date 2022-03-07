@@ -13,6 +13,7 @@ WriteMakefile(
         'Test::More'    => '0.07',
     },
     LICENSE             => 'perl_5',
+    (MM->can('signature_target') ? (SIGN => 1) : ()),
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'CLASS-*' },
     ( eval { ExtUtils::MakeMaker->VERSION(6.46) } ? ( META_MERGE => {
